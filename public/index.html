@@ -1,28 +1,36 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
     <title>Ask the Audience</title>
   </head>
   <body>
-    <h1>Ask the Audience!</h1>
-    <div id="connection-count"></div>
-    <div id="status-message"></div>
-    <div id="choices">
-      <button>A</button>
-      <button>B</button>
-      <button>C</button>
-      <button>D</button>
-    </div>
-    <h2>Results</h2>
-    <div id="your-vote"></div>
-    <div id="results">
-      <div id="A">A: 0</div>
-      <div id="B">B: 0</div>
-      <div id="C">C: 0</div>
-      <div id="D">D: 0</div>
+    <div class="container">
+      <h1 class="center-align">Ask the Audience!</h1>
+      <div class="row">
+        <div class="col l6 offset-l2" id="connection-count"></div>
+        <div class="col l3" id="status-message"></div>
+      </div>
+      <div class="row">
+        <div class="col m4 offset-m4" id="choices">
+          <button class='btn'>A</button>
+          <button class='btn'>B</button>
+          <button class='btn'>C</button>
+          <button class='btn'>D</button>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="center-align">Results</h2>
+        <h4 id="your-vote">Your current vote: </h4>
+        <div class="col m4 offset-m5" id="results">
+          <h5 id="A">A: 0</h5>
+          <h5 id="B">B: 0</h5>
+          <h5 id="C">C: 0</h5>
+          <h5 id="D">D: 0</h5>
+        </div>
+      </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
-
   </body>
 </html>

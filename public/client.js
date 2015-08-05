@@ -24,9 +24,6 @@ for (var i = 0; i < buttons.length; i++) {
     userVote.innerText = "Your current vote: " + this.innerText;
   });
 }
-// socket.on('yourVote', function (text) {
-//   userVote.innerText = text;
-// })
 
 socket.on('voteCount', function (votes) {
   a.innerText = "A: " + votes.A;

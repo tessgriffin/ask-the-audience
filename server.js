@@ -39,19 +39,18 @@ io.on('connection', function (socket) {
 
   socket.emit('statusMessage', 'You have connected.');
   socket.emit('voteCount', countVotes(votes));
-  
+
   socket.on('message', function (channel, message) {
     if (channel === 'voteCast') {
       votes[socket.id] = message;
       io.sockets.emit('voteCount', countVotes(votes));
-      // socket.emit('yourVote', 'You have voted for: ' + message);
     }
   });
 
   socket.on('disconnect', function () {
     console.log('A user has disconnected.', io.engine.clientsCount);
     delete votes[socket.id];
-    socket.emit('voteCount', countVotes(votes));
+    io.sockets.emit('voteCount', countVotes(votes));
     io.sockets.emit('usersConnected', io.engine.clientsCount);
   });
 });
