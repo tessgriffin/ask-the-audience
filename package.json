@@ -1,0 +1,18 @@
+{
+  "name": "ask-the-audience",
+  "version": "0.0.1",
+  "description": "Ask the audience!",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js",
+    "web": "node server.js"
+  },
+  "author": "Tess Griffin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "socket.io": "^1.3.6"
+  }
+}
